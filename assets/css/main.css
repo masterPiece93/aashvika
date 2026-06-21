@@ -819,6 +819,46 @@ body.sp-visible .footer {
 }
 .fc-phone:hover { color: var(--rose); }
 
+/* ── Welcome line (animated) ─────────────────────────────── */
+.welcome-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding: 1.4rem 2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255,107,157,0.07), rgba(199,125,255,0.07));
+  border: 1px solid rgba(255,107,157,0.2);
+}
+.welcome-emoji {
+  font-size: 2.4rem;
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.we-left  { animation: huggingLeft  2.8s ease-in-out infinite; }
+.we-right { animation: huggingRight 2.8s ease-in-out 0.28s infinite; }
+.welcome-text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(90deg,
+    var(--pink) 0%,
+    var(--gold) 40%,
+    var(--lavender) 70%,
+    var(--pink) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s linear infinite;
+}
+
 /* ── FOOTER ──────────────────────────────────────────────── */
 .footer {
   background: var(--dark);

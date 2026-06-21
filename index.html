@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#FF6B9D" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Aashvika's 1st Birthday 🎀</title>
+
+  <!-- Emoji favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+</head>
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-balloons">
+        <span>🎈</span><span>🎀</span><span>🎈</span>
+      </div>
+      <div class="loader-name">
+        <span>A</span><span>a</span><span>s</span><span>h</span><span>v</span><span>i</span><span>k</span><span>a</span>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <p class="loader-hint">Preparing her world&hellip;</p>
+    </div>
+  </div>
+
+  <!-- ===== SCREENSHOT PROTECTION OVERLAY ===== -->
+  <div id="sp-overlay" class="sp-overlay" role="alert" aria-live="assertive">
+    <div class="sp-box">
+      <div class="sp-icon">🔒</div>
+      <h2>Content Protected</h2>
+      <p>This invitation is private. Please return to enjoy the celebration!</p>
+      <button class="sp-btn" id="sp-return">Return to Invitation</button>
+    </div>
+  </div>
+
+  <!-- ===== CUSTOM CURSOR (desktop) ===== -->
+  <div id="cursor" class="cursor" aria-hidden="true"></div>
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span>✨ Aashvika</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="#hero"        class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="#countdown"   class="nav-link" role="menuitem">Countdown</a></li>
+      <li role="none"><a href="#about"       class="nav-link" role="menuitem">About</a></li>
+      <li role="none"><a href="#name"        class="nav-link" role="menuitem">Her Name</a></li>
+      <li role="none"><a href="#details"     class="nav-link" role="menuitem">Details</a></li>
+      <li role="none"><a href="#family"      class="nav-link" role="menuitem">Family</a></li>
+      <li role="none"><a href="#contact"     class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- ─── SECTION 1 : HERO ─── -->
+    <section id="hero" class="section s-hero">
+      <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">🎂 First Birthday Celebration</p>
+        <h1 class="hero-title">
+          <span class="hero-title-small reveal">Celebrating</span>
+          <span class="hero-title-big reveal">Aashvika</span>
+        </h1>
+        <p class="hero-tagline reveal">
+          One tiny girl &mdash; a million reasons to celebrate! 🌸
+        </p>
+        <div class="hero-date reveal">
+          <span>27</span><span class="hero-dot">•</span>
+          <span>June</span><span class="hero-dot">•</span>
+          <span>2026</span>
+        </div>
+        <a href="#details" class="btn btn-primary hero-cta reveal magnetic">
+          <span>Join the Celebration</span>
+        </a>
+      </div>
+
+      <!-- Floating decorations -->
+      <div class="floaties" aria-hidden="true">
+        <span class="floaty f1">🎈</span>
+        <span class="floaty f2">🎀</span>
+        <span class="floaty f3">⭐</span>
+        <span class="floaty f4">🌸</span>
+        <span class="floaty f5">🎊</span>
+        <span class="floaty f6">💕</span>
+        <span class="floaty f7">🌟</span>
+      </div>
+
+      <div class="scroll-hint reveal" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 2 : COUNTDOWN ─── -->
+    <section id="countdown" class="section s-countdown">
+      <div class="section-inner">
+        <p class="section-tag reveal">⏰ Counting Down</p>
+        <h2 class="section-title reveal">The Big Day is Coming!</h2>
+        <p class="section-sub reveal">Mark your calendars &amp; get ready to celebrate</p>
+
+        <div class="countdown-wrap" id="countdown-wrap">
+          <div class="cd-unit">
+            <div class="cd-num" id="cd-days">28</div>
+            <div class="cd-label">Days</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-num" id="cd-hours">00</div>
+            <div class="cd-label">Hours</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-num" id="cd-minutes">00</div>
+            <div class="cd-label">Minutes</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-num" id="cd-seconds">00</div>
+            <div class="cd-label">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Shown when party date arrives -->
+        <div class="cd-celebrate hidden" id="cd-celebrate" role="status" aria-live="polite">
+          <div class="cc-emoji">🎉</div>
+          <h3>The Party Has Begun!</h3>
+          <p>Welcome to Aashvika&apos;s 1st Birthday Celebration!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 3 : ABOUT ─── -->
+    <section id="about" class="section s-about">
+      <div class="section-inner">
+        <p class="section-tag reveal">💕 About the Birthday Star</p>
+        <h2 class="section-title reveal">Our Little Princess</h2>
+        <p class="about-text reveal">
+          One year ago, our world became infinitely more colourful with the arrival
+          of our little miracle — <strong>Aashvika</strong>. From her very first
+          breath, she captured every heart with her twinkling eyes and the most
+          beautiful smile in the universe. 🌟
+        </p>
+        <p class="about-text reveal">
+          This tiny wonder has grown so much — from those early sleepy snuggles to
+          her first giggles, first steps, and first &ldquo;mama&rdquo; and
+          &ldquo;papa.&rdquo; Every single moment has been pure magic. ✨
+        </p>
+        <ul class="milestones" aria-label="Aashvika's milestones">
+          <li class="milestone reveal"><span class="ms-emoji">👶</span><span>Born with infinite love</span></li>
+          <li class="milestone reveal"><span class="ms-emoji">😄</span><span>First smile at 6 weeks</span></li>
+          <li class="milestone reveal"><span class="ms-emoji">🚶</span><span>Started walking</span></li>
+          <li class="milestone reveal"><span class="ms-emoji">🗣️</span><span>First words: Mama &amp; Papa</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 4 : NAME MEANING ─── -->
+    <section id="name" class="section s-name">
+      <div class="name-bg-deco" aria-hidden="true"></div>
+      <div class="section-inner">
+        <p class="section-tag reveal">✨ Her Identity</p>
+        <h2 class="section-title reveal name-display">
+          <span class="name-hindi reveal">आश्विका</span>
+          <span class="name-en reveal">Aashvika</span>
+        </h2>
+
+        <div class="name-cards">
+          <div class="name-card reveal">
+            <div class="nc-icon">🪷</div>
+            <h3>Sanskrit Origin</h3>
+            <p>Derived from the ancient Sanskrit word <strong>&ldquo;Ashwa&rdquo; (अश्व)</strong>,
+            meaning <em>horse</em> — a timeless symbol of <em>strength, freedom, and grace</em>.
+            Aashvika embodies the spirit of a being that is both gentle and powerful.</p>
+          </div>
+          <div class="name-card reveal">
+            <div class="nc-icon">⭐</div>
+            <h3>English Meaning</h3>
+            <p>In English, Aashvika translates to <strong>&ldquo;She Who Has Horses&rdquo;</strong>
+            or <strong>&ldquo;Gift of the Stars&rdquo;</strong> — representing a soul destined to
+            run free, explore the world, and light up every room she enters. ✨</p>
+          </div>
+          <div class="name-card reveal">
+            <div class="nc-icon">🌙</div>
+            <h3>Celestial Connection</h3>
+            <p>Aashvika is connected to the <strong>Ashwini Nakshatra</strong> — the first
+            lunar mansion in Hindu astrology, associated with the twin divine physicians
+            who bring <em>healing, health &amp; happiness</em>. A truly blessed name! 🙏</p>
+          </div>
+          <div class="name-card reveal">
+            <div class="nc-icon">💝</div>
+            <h3>Hindi में अर्थ</h3>
+            <p>हिंदी में <strong>आश्विका</strong> का अर्थ है — <em>&ldquo;वह जो अश्वों
+            की स्वामिनी है&rdquo;</em> या <em>&ldquo;दिव्य आशीर्वाद&rdquo;</em>। यह नाम
+            शक्ति, सौंदर्य और करुणा का प्रतीक है। 🌸</p>
+          </div>
+        </div>
+
+        <blockquote class="name-quote reveal">
+          &ldquo;A name is not just a word — it is the first gift parents give their child.
+          <em>Aashvika</em> — may you always embody your name&rsquo;s grace and strength.&rdquo;
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 5 : PARTY DETAILS ─── -->
+    <section id="details" class="section s-details">
+      <div class="section-inner">
+        <p class="section-tag reveal">📅 Save The Date</p>
+        <h2 class="section-title reveal">Party Details</h2>
+        <p class="section-sub reveal">Come celebrate the beginning of forever memories!</p>
+
+        <div class="detail-cards">
+          <div class="detail-card reveal">
+            <div class="dc-icon">📅</div>
+            <h3>Date</h3>
+            <p class="dc-main">Saturday</p>
+            <p class="dc-sub">27th June, 2026</p>
+          </div>
+          <div class="detail-card reveal">
+            <div class="dc-icon">⏰</div>
+            <h3>Time</h3>
+            <p class="dc-main">6:30 PM</p>
+            <p class="dc-sub">Onwards till 10:00 PM</p>
+          </div>
+          <div class="detail-card reveal">
+            <div class="dc-icon">📍</div>
+            <h3>Venue</h3>
+            <p class="dc-main">Wedding Villa</p>
+            <p class="dc-sub">C-3, Opposite Kendriya Vihar Gate No-2, Street Number 2, Sector 51, Noida, Uttar Pradesh, 201301</p>
+            <p class="dc-sub">Landmark : Near Noida Sector 34 Metro Station </p>
+          </div>
+          <!-- <div class="detail-card reveal">
+            <div class="dc-icon">🎨</div>
+            <h3>Theme</h3>
+            <p class="dc-main">Little Princess</p>
+            <p class="dc-sub">Pink &amp; Gold Extravaganza</p>
+          </div> -->
+        </div>
+
+        <!-- <div class="dress-code reveal">
+          <span class="dc-emoji">👗</span>
+          <div>
+            <h3>Dress Code</h3>
+            <p>Pastel shades, pinks and golds — let&apos;s make it a colourful celebration!</p>
+          </div>
+        </div> -->
+
+        <!-- Event Schedule Timeline -->
+        <div class="event-schedule reveal">
+          <h3 class="schedule-heading">📋 Event Schedule</h3>
+          <div class="schedule-track">
+            <div class="schedule-item">
+              <span class="sch-time">6:30 PM</span>
+              <div class="sch-node"></div>
+              <span class="sch-label">🎉 Guests Arrive</span>
+            </div>
+            <div class="schedule-item highlight">
+              <span class="sch-time">7:30 PM</span>
+              <div class="sch-node"></div>
+              <span class="sch-label">🎂 Cake Cutting</span>
+            </div>
+            <div class="schedule-item">
+              <span class="sch-time">10:00 PM</span>
+              <div class="sch-node"></div>
+              <span class="sch-label">🌙 Farewell</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-btn-wrap reveal">
+          <a href="https://www.google.com/maps/place/Wedding+Villa/@28.5799452,77.3657415,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce57fad9f592b:0x7198ec6197bbcb94!8m2!3d28.5799452!4d77.3657415!16s%2Fg%2F11f3mb93xn" target="_blank" rel="noopener noreferrer"
+             class="btn btn-outline magnetic">
+            <span>📍 Get Directions</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 6 : FAMILY ─── -->
+    <section id="family" class="section s-family">
+      <div class="section-inner">
+        <p class="section-tag reveal">🙏 With Love &amp; Blessings</p>
+        <h2 class="section-title reveal">Waiting to Welcome You</h2>
+        <p class="section-sub reveal">Aashvika&apos;s grandparents are eagerly waiting to welcome you with open arms!</p>
+
+        <div class="family-groups">
+
+          <!-- Paternal Grandparents -->
+          <div class="family-group reveal">
+            <h3 class="family-group-title">🏠 Grandparents</h3>
+            <div class="family-cards">
+              <div class="family-card">
+                <div class="fc-avatar">👴</div>
+                <div class="fc-info">
+                  <h4>[Nagendra Singh Yadav]</h4>
+                  <p class="fc-relation">Dada Ji</p>
+                  <a href="tel:+919871241665" class="fc-phone">📞 +91 98712 41665</a>
+                </div>
+              </div>
+              <div class="family-card">
+                <div class="fc-avatar">👵</div>
+                <div class="fc-info">
+                  <h4>[Munesh Yadav]</h4>
+                  <p class="fc-relation">Dadi Ji</p>
+                  <a href="tel:+919911561422" class="fc-phone">📞 +91 99115 61422</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maternal Grandparents -->
+          <!-- <div class="family-group reveal">
+            <h3 class="family-group-title">🏡 Maternal Grandparents</h3>
+            <div class="family-cards">
+              <div class="family-card">
+                <div class="fc-avatar">👴</div>
+                <div class="fc-info">
+                  <h4>[Nana Ji&apos;s Name]</h4>
+                  <p class="fc-relation">Nana Ji</p>
+                  <a href="tel:+91XXXXXXXXXX" class="fc-phone">📞 +91 XXXXX XXXXX</a>
+                </div>
+              </div>
+              <div class="family-card">
+                <div class="fc-avatar">👵</div>
+                <div class="fc-info">
+                  <h4>[Nani Ji&apos;s Name]</h4>
+                  <p class="fc-relation">Nani Ji</p>
+                  <a href="tel:+91XXXXXXXXXX" class="fc-phone">📞 +91 XXXXX XXXXX</a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 7 : CONTACT ─── -->
+    <section id="contact" class="section s-contact">
+      <div class="section-inner">
+        <p class="section-tag reveal">📞 Get in Touch</p>
+        <h2 class="section-title reveal">Contact the Hosts</h2>
+        <p class="section-sub reveal">Have questions? We&apos;re here to help!</p>
+
+        <!-- Parents Contact Group -->
+        <div class="contact-group reveal">
+          <h3 class="contact-group-title">👨 Papa</h3>
+          <div class="contact-cards">
+            <a href="tel:+919910504776" class="contact-card" aria-label="Call Papa">
+              <div class="cc-icon">📱</div>
+              <h3>Call</h3>
+              <span>+91 99105 04776</span>
+            </a>
+            <a href="https://wa.me/919910504776" target="_blank" rel="noopener noreferrer"
+               class="contact-card" aria-label="WhatsApp Papa">
+              <div class="cc-icon">💬</div>
+              <h3>WhatsApp</h3>
+              <span>Message Papa</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-group reveal">
+          <h3 class="contact-group-title">👩 Mama</h3>
+          <div class="contact-cards">
+            <a href="tel:+919013288225" class="contact-card" aria-label="Call Mama">
+              <div class="cc-icon">📱</div>
+              <h3>Call</h3>
+              <span>+91 90132 88225</span>
+            </a>
+            <a href="https://wa.me/919013288225" target="_blank" rel="noopener noreferrer"
+               class="contact-card" aria-label="WhatsApp Mama">
+              <div class="cc-icon">💬</div>
+              <h3>WhatsApp</h3>
+              <span>Message Mama</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-emoji">🎀</p>
+      <p class="footer-text">
+        Made with <span aria-label="love">💕</span> for our little princess
+      </p>
+      <p class="footer-name">Aashvika&apos;s 1st Birthday &mdash; June 27, 2026</p>
+      <p class="footer-deco" aria-hidden="true">🌸 ⭐ 🎈 ✨ 🌸</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- App -->
+  <script src="assets/js/countdown.js" defer></script>
+  <script src="assets/js/sensors.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

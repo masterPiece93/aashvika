@@ -507,7 +507,7 @@ body.sp-visible .footer {
 .s-name .section-tag  { color: var(--lavender); margin-bottom: 0.5rem; }
 .name-display {
   display: flex !important; flex-direction: column; align-items: center;
-  margin-bottom: 3.5rem !important;
+  margin-bottom: 2rem !important;
 }
 .name-hindi {
   font-family: var(--font-heading);
@@ -522,22 +522,47 @@ body.sp-visible .footer {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; line-height: 1;
 }
-.name-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem; margin-bottom: 3rem;
+
+/* ── Name section split layout ───────────────────────────── */
+.name-top  { padding-top: 5rem; padding-bottom: 1.5rem; }
+.name-bottom { padding-top: 1.5rem; padding-bottom: 5rem; }
+
+/* ── Name Slider ─────────────────────────────────────────── */
+.name-slider-wrap {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  padding: 1.5rem 0 2rem;
+  /* Fade-out edges for cinematic feel */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  touch-action: pan-y;
 }
+.name-slider-wrap:active { cursor: grabbing; }
+.name-slider-wrap.dragging { cursor: grabbing; }
+
+.name-slider-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .name-card {
+  flex-shrink: 0;
+  width: clamp(260px, 35vw, 320px);
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
   padding: 2rem 1.5rem;
-  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
 .name-card:hover {
-  transform: translateY(-6px);
   background: rgba(255,255,255,0.09);
   box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
 }
 .nc-icon { font-size: 2rem; margin-bottom: 1rem; }
 .name-card h3 {
@@ -800,8 +825,6 @@ body.sp-visible .footer {
   .cd-unit { min-width: 75px; padding: 1.5rem 1rem; }
 
   .dress-code { flex-direction: column; text-align: center; }
-
-  .name-cards { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

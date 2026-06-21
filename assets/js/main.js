@@ -418,6 +418,100 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
+     NAME CARD HORIZONTAL SLIDER
+  ═══════════════════════════════════════════════════════════ */
+  function initNameSlider() {
+    const wrap  = document.getElementById('name-slider-wrap');
+    const track = document.getElementById('name-slider-track');
+    if (!wrap || !track) return;
+
+    // Duplicate cards for seamless infinite loop
+    Array.from(track.children).forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    let pos        = 0;
+    const speed    = 0.55;   // px per frame
+    let paused     = false;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartPos = 0;
+
+    function halfWidth() { return track.scrollWidth / 2; }
+
+    function clamp(p) {
+      const h = halfWidth();
+      return ((p % h) + h) % h;   // always positive mod
+    }
+
+    function step() {
+      if (!paused && !isDragging) {
+        pos = clamp(pos + speed);
+        track.style.transform = `translateX(-${pos}px)`;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+
+    // ── Hover pause (desktop) ─────────────────────────────
+    wrap.addEventListener('mouseenter', () => { paused = true;  });
+    wrap.addEventListener('mouseleave', () => {
+      if (!isDragging) paused = false;
+    });
+
+    // ── Mouse drag ────────────────────────────────────────
+    wrap.addEventListener('mousedown', e => {
+      isDragging  = true;
+      paused      = true;
+      dragStartX   = e.clientX;
+      dragStartPos = pos;
+      wrap.classList.add('dragging');
+    });
+
+    window.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const dx = dragStartX - e.clientX;
+      pos = clamp(dragStartPos + dx);
+      track.style.transform = `translateX(-${pos}px)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      paused     = false;
+      wrap.classList.remove('dragging');
+    });
+
+    // ── Touch drag + pause ────────────────────────────────
+    let touchStartX   = 0;
+    let touchStartPos = 0;
+    let touchPausedTimeout;
+
+    wrap.addEventListener('touchstart', e => {
+      isDragging    = true;
+      paused        = true;
+      touchStartX   = e.touches[0].clientX;
+      touchStartPos = pos;
+      clearTimeout(touchPausedTimeout);
+    }, { passive: true });
+
+    wrap.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      const dx = touchStartX - e.touches[0].clientX;
+      pos = clamp(touchStartPos + dx);
+      track.style.transform = `translateX(-${pos}px)`;
+    }, { passive: true });
+
+    wrap.addEventListener('touchend', () => {
+      isDragging = false;
+      // Resume auto-scroll 2s after user lifts finger
+      touchPausedTimeout = setTimeout(() => { paused = false; }, 2000);
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════════
      INIT
   ═══════════════════════════════════════════════════════════ */
   function init() {
@@ -429,6 +523,7 @@
     initScrollReveal();
     initMagneticButtons();
     initRipple();
+    initNameSlider();
     initSmoothScroll();
 
     // Run GSAP animations after GSAP is available

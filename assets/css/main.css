@@ -395,7 +395,13 @@ body.sp-visible .footer {
   color: var(--gold); letter-spacing: 2px;
 }
 .hero-dot { opacity: 0.5; }
-.hero-cta { margin-bottom: 4rem; }
+.hero-cta {
+  margin-bottom: 4rem;
+  /* Glow pulse — safe on desktop (no transform, won't fight magnetic JS) */
+  animation: btnGlow 2.8s ease-in-out 2.2s infinite;
+}
+.hero-cta:hover,
+.hero-cta:focus { animation-play-state: paused; }
 
 .floaties {
   position: absolute; inset: 0; pointer-events: none; z-index: 1;
@@ -415,14 +421,23 @@ body.sp-visible .footer {
 
 .scroll-hint {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 2px;
-  text-transform: uppercase; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  color: rgba(255,255,255,0.45); font-size: 0.75rem; letter-spacing: 2px;
+  text-transform: uppercase; z-index: 2; pointer-events: none;
 }
-.scroll-line {
-  width: 1px; height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
+/* Stacked bouncing chevrons */
+.scroll-chevrons {
+  display: flex; flex-direction: column; align-items: center; margin-top: 0.1rem;
+}
+.scroll-chev {
+  width: 26px; height: 26px; display: block;
+  stroke: rgba(255,255,255,0.45);
+  margin-top: -10px; /* overlap chevrons for double-arrow look */
+  animation: bounceDown 1.5s ease-in-out infinite;
+}
+.scroll-chev-2 {
+  animation-delay: 0.18s;
+  opacity: 0.5;
 }
 
 /* ── COUNTDOWN ───────────────────────────────────────────── */
@@ -844,6 +859,28 @@ body.sp-visible .footer {
   .cd-unit { min-width: 75px; padding: 1.5rem 1rem; }
 
   .dress-code { flex-direction: column; text-align: center; }
+
+  /* ── Mobile: hero slightly shorter so next section peeks ── */
+  .s-hero {
+    min-height: calc(100vh - 72px);   /* fallback */
+    min-height: calc(100svh - 72px);  /* svh = viewport excluding browser chrome */
+  }
+
+  /* ── Mobile: scroll hint more prominent ─────────────────── */
+  .scroll-hint {
+    bottom: 1.6rem;
+    color: rgba(255,255,255,0.65);
+  }
+  .scroll-chev {
+    stroke: var(--pink-light);
+    width: 30px; height: 30px;
+  }
+
+  /* ── Mobile: CTA bounce (translateY safe — no magnetic on touch) */
+  .hero-cta {
+    animation: btnBounce 3.5s ease 2.2s infinite,
+               btnGlow   2.8s ease-in-out 2.2s infinite;
+  }
 }
 
 @media (max-width: 480px) {

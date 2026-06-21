@@ -407,14 +407,17 @@
       delay: 2.4,
     });
 
-    // Name section big reveal
-    gsap.from('.name-en', {
-      scrollTrigger: { trigger: '.name-en', start: 'top 80%' },
-      duration: 1.2,
-      scale: 0.7,
-      opacity: 0,
-      ease: 'back.out(1.4)',
-    });
+    // Name section big reveal — explicit fromTo so CSS .reveal never conflicts
+    gsap.fromTo('.name-en',
+      { scale: 0.7, opacity: 0 },
+      {
+        scrollTrigger: { trigger: '.name-en', start: 'top 80%' },
+        duration: 1.2,
+        scale: 1,
+        opacity: 1,
+        ease: 'back.out(1.4)',
+      }
+    );
   }
 
   /* ═══════════════════════════════════════════════════════════
